@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+     "start:browser": "start http://localhost:3000 && npm run dev"
   },
   "dependencies": {
     "react": "^18",
