@@ -22,12 +22,15 @@ export const RegisterForm = () => {
           placeholder="*********"
         />
         <button className="bg-primaryOrangeHex py-2 rounded-lg hover:bg-opacity-80 transition-all duration-300">
-            <span className="text-white font-semibold text-lg">Register</span>
+          <span className="text-white font-semibold text-lg">Register</span>
         </button>
       </div>
       <div className="w-full flex justify-end items-center mt-2 gap-2 text-orange-500">
-        <Link href={"/auth/login"} className="text-sm underline hover:opacity-80 transition-all duration-300">
-            Already have an account?{" "}
+        <Link
+          href={"/auth/login"}
+          className="text-sm underline hover:opacity-80 transition-all duration-300"
+        >
+          Already have an account?{" "}
         </Link>
       </div>
     </form>
