@@ -1,33 +1,30 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { toast } from "react-hot-toast";
 import { useAuthStore } from "@/store/auth";
 import { useToast } from "@/utils/hooks";
-
-type LoginForm = {
-  email: string;
-  password: string;
-};
+import { LoginForm as TLoginForm } from "../types";
 
 export const LoginForm = () => {
-  const [form, setForm] = useState<LoginForm>({
+  const [form, setForm] = useState<TLoginForm>({
     email: "",
     password: "",
   });
+  const router = useRouter();
   const { login } = useAuthStore();
   const { error } = useToast();
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(form.email.trim() == "" || form.password.trim() == "");
     if (form.email.trim() == "" || form.password.trim() == "")
       return error("Please fill all the fields");
 
     const ok = await login(form.email, form.password);
     if (!ok) {
-      error("Invalid credentials");
+      return error("Invalid credentials");
     }
+    router.push("/");
   };
 
   return (
