@@ -1,5 +1,4 @@
-import { MenuIcon } from "@/common/ui";
-import { Sidebar } from "@/common/ui/Sidebar";
+import { MenuIcon, Sidebar } from "@/components/common/ui";
 import { LoginForm } from "../components/LoginForm";
 import { RegisterForm } from "../components/RegisterForm";
 
@@ -19,7 +18,6 @@ export default function AuthMethodPage({ params }: Props) {
           <MenuIcon />
         </i>
       </header>
-      <Sidebar/>
       <section className="flex items-center justify-center h-full">
         {params.method === "register" ? <RegisterForm /> : <LoginForm />}
       </section>
