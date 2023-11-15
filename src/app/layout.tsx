@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} h-screen w-full bg-primaryBlackHex`}
+        className={`${poppins.className} h-screen w-full bg-gray-900`}
       >
         <Toaster reverseOrder={false} position="top-center" />
         {children}
