@@ -67,7 +67,7 @@ export const RegisterForm = () => {
           }
         />
         <button
-          className="bg-primaryOrangeHex py-2 rounded-lg hover:bg-opacity-80 transition-all duration-300"
+          className="bg-primary_orange py-2 rounded-lg hover:bg-opacity-80 transition-all duration-300"
           disabled={form.email.trim() == "" || form.password.trim() == ""}
         >
           <span className="text-white font-semibold text-lg">Register</span>

@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { Sidebar } from "@/components/common/ui";
+import Header from '@/components/common/ui/header/Header'; 
+
 
 const poppins = Poppins({
   weight: ["400", "700"],
@@ -27,6 +29,7 @@ export default function RootLayout({
         className={`${poppins.className} h-screen w-full bg-gray-900`}
       >
         <Toaster reverseOrder={false} position="top-center" />
+        <Header/>
         <Sidebar/>
         {children}
       </body>
