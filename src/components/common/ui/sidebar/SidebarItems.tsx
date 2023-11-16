@@ -32,7 +32,7 @@ export default function SidebarItems({ user }: SidebarItemsProps) {
           </button>
         </>
       ) : (
-        <div className="absolute bottom-10 flex flex-col items-center gap-5 text-center text-[17px] font-semibold">
+        <div className="absolute bottom-16 flex flex-col items-center gap-5 text-center text-[17px] font-semibold">
           <li className="bg-primary_orange w-32 py-1 rounded-full hover:opacity-80 transition-opacity duration-300 ease-in-out">
             <Link href="/auth/login">
               <span>Login</span>

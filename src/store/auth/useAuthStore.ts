@@ -12,6 +12,7 @@ interface UseAuthStore {
     email: string,
     password: string
   ) => Promise<[string, boolean]>;
+  renewToken: () => Promise<void>;
 }
 
 export const useAuthStore = create<UseAuthStore>((set) => ({
@@ -34,6 +35,7 @@ export const useAuthStore = create<UseAuthStore>((set) => ({
       return false;
     } catch (error) {
       console.log(error);
+      cookies.remove("token");
       return false;
     }
   },
@@ -52,10 +54,30 @@ export const useAuthStore = create<UseAuthStore>((set) => ({
         cookies.set("token", response.token);
         return [response.message, true];
       }
+      cookies.remove("token");
       return [response.message, false];
     } catch (error: any) {
       console.log(error);
+      cookies.remove("token");
       return [error.message, false];
+    }
+  },
+  renewToken: async () => {
+    try {
+      const response = await fetcAdapter.get<AuthResponse>("/auth/renew");
+      if (response.ok) {
+        set({
+          token: response.token,
+          user: response.data,
+        });
+        cookies.set("token", response.token);
+      } else {
+        cookies.remove("token");
+        set({ token: null, user: null });
+      }
+    } catch (error) {
+      console.log(error);
+      cookies.remove("token");
     }
   },
 }));
