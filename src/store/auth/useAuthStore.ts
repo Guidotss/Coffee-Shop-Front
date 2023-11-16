@@ -64,7 +64,12 @@ export const useAuthStore = create<UseAuthStore>((set) => ({
   },
   renewToken: async () => {
     try {
-      const response = await fetcAdapter.get<AuthResponse>("/auth/renew");
+      const token = cookies.get("token");
+      if (!token) return;
+      const response = await fetcAdapter.get<AuthResponse>(
+        "/auth/renew",
+        token
+      );
       if (response.ok) {
         set({
           token: response.token,
