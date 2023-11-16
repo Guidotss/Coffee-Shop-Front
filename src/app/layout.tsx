@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} h-screen w-full bg-gray-900 scroll-bar`}
+        className={`${poppins.className} h-screen w-full bg-primary_black scroll-bar`}
       >
         <Toaster reverseOrder={false} position="top-center" />
         <Header />

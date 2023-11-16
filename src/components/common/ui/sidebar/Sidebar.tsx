@@ -26,7 +26,7 @@ export const Sidebar = () => {
     isSidebarOpen && (
       <div className="absolute h-screen w-full flex justify-end bg-gray-600 bg-opacity-20 animate__animated animate__fadeIn animate__faster">
         <aside className="flex flex-col items-center gap-10 w-60 bg-primary_dark_grey py-5 animate__animated animate__slideInRight animate__faster">
-          {!user && <UserData user={user} />}
+          {user && <UserData user={user} />}
           <SidebarItems user={user} />
         </aside>
       </div>
