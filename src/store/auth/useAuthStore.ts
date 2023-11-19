@@ -3,7 +3,7 @@ import cookies from "js-cookie";
 import { AuthResponse, User } from "@/app/auth/interfaces";
 import { fetcAdapter } from "@/utils";
 
-interface UseAuthStore {
+interface AuthStore {
   token: string | null;
   user: User | null;
   login: (email: string, password: string) => Promise<boolean>;
@@ -15,7 +15,7 @@ interface UseAuthStore {
   renewToken: () => Promise<void>;
 }
 
-export const useAuthStore = create<UseAuthStore>((set) => ({
+export const useAuthStore = create<AuthStore>((set) => ({
   token: null,
   user: null,
   login: async (email: string, password: string) => {
