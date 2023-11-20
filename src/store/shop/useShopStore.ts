@@ -9,7 +9,7 @@ interface ShopStore {
   loadProducts: () => Promise<void>;
 }
 
-export const useAuthStore = create<ShopStore>((set, get) => ({
+export const useShopStore = create<ShopStore>((set, get) => ({
   loading: false,
   products: [],
   loadProducts: async () => {

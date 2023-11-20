@@ -21,7 +21,6 @@ export const Sidebar = () => {
     }
   }, [isSidebarOpen]);
 
-  console.log("Sidebar", user);
   return (
     isSidebarOpen && (
       <div className="absolute h-screen w-full flex justify-end bg-gray-600 bg-opacity-20 animate__animated animate__fadeIn animate__faster">
