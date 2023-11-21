@@ -19,6 +19,7 @@ export const ProductsGrid = () => {
           <ProductCard
             key={product.id}
             className="h-full w-full flex flex-col items-center justify-center bg-primary_dark_grey rounded-lg cursor-pointer"
+            navigateTo={`/products/${product.id}`}
           >
             <ProductCard.Image
               src={product.imagelink_portrait}
