@@ -1,8 +1,7 @@
 import { create } from "zustand";
-import { fetcAdapter } from "@/utils";
+import { fetchAdapter } from "@/utils";
 import { Product } from "@/interfaces";
-import { GetAllProductsResponse } from "@/interfaces/getAllProductsResponse";
-
+import { GetAllProductsResponse } from "@/interfaces";
 interface ShopStore {
   products: Product[];
   loading: boolean;
@@ -15,7 +14,7 @@ export const useShopStore = create<ShopStore>((set, get) => ({
   loadProducts: async () => {
     set({ loading: true });
     try {
-      const response = await fetcAdapter.get<GetAllProductsResponse>("/shop");
+      const response = await fetchAdapter.get<GetAllProductsResponse>("/shop");
       if (response.ok) {
         set({ products: response.data, loading: false });
       } else {

@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import cookies from "js-cookie";
 import { AuthResponse, User } from "@/app/auth/interfaces";
-import { fetcAdapter } from "@/utils";
+import { fetchAdapter } from "@/utils";
 
 interface AuthStore {
   token: string | null;
@@ -20,7 +20,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
   user: null,
   login: async (email: string, password: string) => {
     try {
-      const response = await fetcAdapter.post<AuthResponse>("/auth/login", {
+      const response = await fetchAdapter.post<AuthResponse>("/auth/login", {
         email,
         password,
       });
@@ -41,7 +41,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
   },
   register: async (name: string, email: string, password: string) => {
     try {
-      const response = await fetcAdapter.post<AuthResponse>("/auth/register", {
+      const response = await fetchAdapter.post<AuthResponse>("/auth/register", {
         name,
         email,
         password,
@@ -66,7 +66,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
     try {
       const token = cookies.get("token");
       if (!token) return;
-      const response = await fetcAdapter.get<AuthResponse>(
+      const response = await fetchAdapter.get<AuthResponse>(
         "/auth/renew",
         token
       );

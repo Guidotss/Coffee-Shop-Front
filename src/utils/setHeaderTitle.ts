@@ -5,6 +5,8 @@ export function setHeaderTitle(path: string): string {
     return "Login";
   } else if (path === "/auth/register") {
     return "Register";
+  }else if(path.includes("/products")){
+    return "Products"
   }
   return "Not Found";
 }

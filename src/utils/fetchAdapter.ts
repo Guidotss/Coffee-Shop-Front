@@ -1,4 +1,3 @@
-import cookies from "js-cookie";
 import { FetchAdapter as IFetchAdapter } from "@/interfaces";
 
 export class FetchAdapter implements IFetchAdapter {
