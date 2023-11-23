@@ -1,16 +1,22 @@
 import { create } from "zustand";
 import { fetchAdapter } from "@/utils";
-import { Product } from "@/interfaces";
+import { Order, Product } from "@/interfaces";
 import { GetAllProductsResponse } from "@/interfaces";
 interface ShopStore {
   products: Product[];
   loading: boolean;
+  cart: Order[];
+  currentOrder: Order | null;
+  setCurrentOrder: (order: Order) => void;
   loadProducts: () => Promise<void>;
+  addToCart: (product: Order) => void;
 }
 
 export const useShopStore = create<ShopStore>((set, get) => ({
   loading: false,
   products: [],
+  cart: [],
+  currentOrder: null,
   loadProducts: async () => {
     set({ loading: true });
     try {
@@ -25,4 +31,8 @@ export const useShopStore = create<ShopStore>((set, get) => ({
       console.log(error);
     }
   },
+  addToCart: (order: Order) => {
+    const { cart } = get();
+  },
+  setCurrentOrder: (order: Order) => {},
 }));

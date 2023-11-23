@@ -2,12 +2,7 @@ import { Suspense } from "react";
 import Image from "next/image";
 import { GetProductResponse } from "@/interfaces";
 import { fetchAdapter } from "@/utils";
-import {
-  ProductBuyButtons,
-  ProductCounter,
-  ProductData,
-  ProductPrices,
-} from "./components";
+import { ProductData, ProductPrices } from "./components";
 interface Props {
   params: {
     id: string;
@@ -44,9 +39,10 @@ export default async function ProductPage({ params }: Props) {
                 name={product?.name!}
                 description={product?.description!}
               />
-              <ProductPrices prices={product?.prices!} />
-              <ProductCounter />
-              <ProductBuyButtons />
+              <ProductPrices
+                product_id={product?.id!}
+                prices={product?.prices!}
+              />
             </div>
           </div>
           <div className="hidden lg:block" />
