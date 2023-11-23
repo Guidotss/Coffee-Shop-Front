@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-@media screen and (min-width: 514px) {
+@media screen and (max-width: 514px) {
   .scroll-bar::-webkit-scrollbar {
     display: none;
   }
