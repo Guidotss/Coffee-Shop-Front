@@ -1,2 +1,2 @@
 export * from "./ProductData";
-export * from './ProductPrices';
+export * from './ProductBuyActions';
