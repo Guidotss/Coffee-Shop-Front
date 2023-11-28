@@ -6,11 +6,15 @@ import { ProductCounter } from "./ProductCounter";
 import { ProductPrices } from "./ProductPrices";
 
 interface Props {
-  product_id: string;
+  productInfo:  {
+    id: string; 
+    image: string; 
+    name: string;
+  }
   prices: Price[];
 }
 
-export const ProductBuyActions = ({ prices, product_id }: Props) => {
+export const ProductBuyActions = ({ prices, productInfo }: Props) => {
   const {
     size,
     counter,
@@ -18,7 +22,7 @@ export const ProductBuyActions = ({ prices, product_id }: Props) => {
     increment,
     decrement,
     handleAddToCart,
-  } = useProduct(product_id);
+  } = useProduct({ productInfo });
 
   return (
     <div className="flex flex-col ">

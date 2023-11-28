@@ -1,12 +1,12 @@
 import { create } from "zustand";
 import { fetchAdapter } from "@/utils";
-import { Order, Product } from "@/interfaces";
+import { Cart, Product } from "@/interfaces";
 import { GetAllProductsResponse } from "@/interfaces";
 interface ShopStore {
   products: Product[];
   loading: boolean;
-  cart: Order[];
-  currentOrder: Order | null;
+  cart: Cart[];
+  currentOrder: Cart | null;
   loadProducts: () => Promise<void>;
   loadCart: () => void;
 }

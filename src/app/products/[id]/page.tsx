@@ -40,7 +40,11 @@ export default async function ProductPage({ params }: Props) {
                 description={product?.description!}
               />
               <ProductBuyActions
-                product_id={product?.id!}
+                productInfo={{
+                  id: product?.id!,
+                  image: product?.imagelink_square!,
+                  name: product?.name!,
+                }}
                 prices={product?.prices!}
               />
             </div>
