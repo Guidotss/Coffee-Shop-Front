@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Image from "next/image";
 import { GetProductResponse } from "@/interfaces";
 import { fetchAdapter } from "@/utils";
-import { ProductData, ProductBuyActions } from "./components";
+import { ProductData, ProductBuyActions } from "@/components/products";
 interface Props {
   params: {
     id: string;

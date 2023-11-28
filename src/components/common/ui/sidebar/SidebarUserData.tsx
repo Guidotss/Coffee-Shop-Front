@@ -1,4 +1,4 @@
-import { User } from "@/app/auth/interfaces";
+import { User } from "@/interfaces";
 import Link from "next/link";
 
 interface Props {

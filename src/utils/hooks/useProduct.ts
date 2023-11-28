@@ -1,5 +1,5 @@
-import { Order } from "@/interfaces";
 import { useEffect, useState } from "react";
+import { Order } from "@/interfaces";
 
 type Size = {
   size: string;
@@ -58,7 +58,6 @@ export const useProduct = (id: string) => {
     setCart(newCart);
     localStorage.setItem("cart", JSON.stringify(newCart));
     setCounter(1);
-    console.log(cart);
   };
 
   return {

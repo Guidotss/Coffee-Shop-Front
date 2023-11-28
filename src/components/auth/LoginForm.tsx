@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuthStore } from "@/store/auth";
 import { useToast } from "@/utils/hooks";
-import { LoginForm as TLoginForm } from "../types";
+import { LoginForm as TLoginForm } from "@/types";
 
 export const LoginForm = () => {
   const [form, setForm] = useState<TLoginForm>({

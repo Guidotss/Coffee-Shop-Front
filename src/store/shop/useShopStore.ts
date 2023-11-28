@@ -7,9 +7,8 @@ interface ShopStore {
   loading: boolean;
   cart: Order[];
   currentOrder: Order | null;
-  setCurrentOrder: (order: Order) => void;
   loadProducts: () => Promise<void>;
-  addToCart: (product: Order) => void;
+  loadCart: () => void;
 }
 
 export const useShopStore = create<ShopStore>((set, get) => ({
@@ -31,8 +30,12 @@ export const useShopStore = create<ShopStore>((set, get) => ({
       console.log(error);
     }
   },
-  addToCart: (order: Order) => {
-    const { cart } = get();
+  loadCart: () => {
+    const cart = localStorage.getItem("cart");
+    if (cart) {
+      set({ cart: JSON.parse(cart) });
+    } else {
+      set({ cart: [] });
+    }
   },
-  setCurrentOrder: (order: Order) => {},
 }));

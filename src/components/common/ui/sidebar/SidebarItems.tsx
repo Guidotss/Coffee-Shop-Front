@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import { User } from "@/app/auth/interfaces";
+import { User } from "@/interfaces";
 import { sidebarItems } from "@/constants";
 
 interface SidebarItemsProps {
@@ -23,7 +23,7 @@ export default function SidebarItems({ user }: SidebarItemsProps) {
       {user ? (
         <>
           <li className="hover:text-orange-500 transition-colors duration-300 ease-in-out">
-            <Link href="/auth/login">
+            <Link href="/cart">
               <span>Cart</span>
             </Link>
           </li>

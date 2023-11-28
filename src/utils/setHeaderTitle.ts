@@ -7,6 +7,8 @@ export function setHeaderTitle(path: string): string {
     return "Register";
   }else if(path.includes("/products")){
     return "Products"
+  }else if(path.includes("/cart")){
+    return "Cart"
   }
   return "Not Found";
 }

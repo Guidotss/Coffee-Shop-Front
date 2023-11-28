@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
-import { RegisterForm as TRegisterForm } from "../types";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useAuthStore } from "@/store/auth";
+import { RegisterForm as TRegisterForm } from "@/types";
 import { useToast } from "@/utils/hooks";
 
 export const RegisterForm = () => {

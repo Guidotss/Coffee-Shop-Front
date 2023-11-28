@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import cookies from "js-cookie";
-import { AuthResponse, User } from "@/app/auth/interfaces";
+import { AuthResponse, User } from "@/interfaces";
 import { fetchAdapter } from "@/utils";
 
 interface AuthStore {
