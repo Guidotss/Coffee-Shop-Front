@@ -1,5 +1,9 @@
+import { ProductsList } from "@/components/cart/ProductsList";
+
 export default function CartPage() {
     return ( 
-        <h1>hola</h1>
+        <main className="flex flex-col">
+            <ProductsList />
+        </main>
     )
 }
